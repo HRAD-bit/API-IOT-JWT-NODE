@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const PORT = process.env.PORT || 8081;
 var corsOption = {
-  origin: ["http://localhost:8080", "https://localhost:8080"],
+  origin: ["http://localhost:8080", "https://localhost:8080",  "http://localhost", "http://localhost"],
 };
 app.use(cors(corsOption));
 app.use(express.json());
