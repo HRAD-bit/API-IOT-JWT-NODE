@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
 const conexion = require("../models/db");
 const { promisify } = require("util");
+const { response } = require("express");
 
 //procedimiento para registrarnos
 exports.register = async (req, res) => {
@@ -60,6 +61,7 @@ exports.register = async (req, res) => {
                   message: "Success",
                   token: token,
                   email: email,
+                  id: results[0].id
                 });
               }
             }
@@ -130,6 +132,7 @@ exports.login = async (req, res) => {
               message: "Success",
               token: token,
               email: email,
+              id: results[0].id
             });
           }
         }
